@@ -1,0 +1,17 @@
+//variables of grid loop
+$init: 1;
+$finish-grid: 12;
+
+//variables of item loop
+
+$list-colors: '#f35325', '#81bc06', '#05a6f0', '#ffba08', '#05f0da' ,
+'#f08705' , '#b605f0', '#5505f0', '#f0057c', '#ccf005', '#ccc', '#000';
+
+$time:1;
+$finish-item: $finish-grid - 8;
+
+//grid
+$mobile:767;
+$tablet-init:768;
+$tablet-finish:1024;
+$desktop:1200;

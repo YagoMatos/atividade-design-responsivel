@@ -1,0 +1,55 @@
+@import "variable.scss";
+
+*{
+	box-sizing:border-box;
+}
+
+.container{
+	max-width: $desktop + px;
+	margin: 0 auto;
+	max-width: 100%;
+}
+
+.row:after{
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.col{
+	position: relative;
+	min-height: 1px;
+	float: left;
+	padding: 0 15px; 
+}
+
+@for $i from $init through $finish-grid {
+	.col-#{$i} { 
+	 	width:( ($desktop/$finish-grid) * $i /$finish-grid ) + %; 
+	}
+}
+
+
+@media (max-width: $mobile + px) {
+	.container{
+		max-width: $tablet-init + px;
+	}
+
+	@for $i from $init through $finish-grid {
+		.col-#{$i} { 
+	 		width:( ($desktop/$finish-grid) * ($finish-grid - $i + 1)   /$finish-grid ) + %; 
+		}
+	}
+}
+
+
+@media (min-width: $tablet-init + px) and (max-width: $tablet-finish + px) {
+	.container{
+		max-width: $tablet-finish + px;
+	}
+	@for $i from $init through $finish-grid {
+	.col-#{$i} { 
+	 		width:( ($desktop/$finish-grid) * 6 /$finish-grid ) + %; 
+		}
+	}
+}

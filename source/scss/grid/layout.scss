@@ -1,0 +1,9 @@
+@import "variable.scss";
+
+@each $elemento in $list-colors {
+	.item#{$time} {
+		background-color:(#{$elemento});
+		height: 100px;
+	}
+	$time: $time + 1;
+}
